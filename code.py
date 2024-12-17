@@ -7,6 +7,14 @@ from kmk.modules.split import Split
 
 keyboard = KMKKeyboard()
 
+split = Split(
+    uart_interval=20,
+    data_pin=board.TX,
+    data_pin2=board.RX,
+)
+
+keyboard.modules.append(split)
+
 keyboard.row_pins = (
     board.GP11,
     board.GP12,
@@ -21,11 +29,6 @@ keyboard.col_pins = (
     board.GP15,
 )
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
-split = Split(
-    data_pin=board.GP0,
-    data_pin2=board.GP1,
-)
-keyboard.modules = [split]
 
 XXXX = KC.NO
 # fmt: off
