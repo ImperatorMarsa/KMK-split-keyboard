@@ -14,11 +14,11 @@ keyboard.row_pins = (
     board.GP14,
 )
 keyboard.col_pins = (
-    board.GP15,
-    board.GP26,
-    board.GP27,
-    board.GP28,
     board.GP29,
+    board.GP28,
+    board.GP27,
+    board.GP26,
+    board.GP15,
 )
 keyboard.diode_orientation = DiodeOrientation.COL2ROW
 split = Split(
@@ -27,6 +27,7 @@ split = Split(
 )
 keyboard.modules = [split]
 
+XXXX = KC.NO
 # fmt: off
 keyboard.keymap = [
     [
@@ -35,9 +36,8 @@ keyboard.keymap = [
         KC.A, KC.S, KC.D, KC.F, KC.G,   KC.H, KC.J, KC.K,    KC.L,   KC.SCLN,
         KC.Z, KC.X, KC.C, KC.V, KC.B,   KC.N, KC.M, KC.COMM, KC.DOT, KC.SLSH,
 
-           KC.LCTL, KC.LGUI, KC.LALT,   KC.SPC, KC.ENT, KC.BSPC,
+        XXXX, XXXX, KC.LCTL, KC.LGUI, KC.LALT,   KC.SPC, KC.ENT, KC.BSPC, XXXX, XXXX,
     ],
-]
 # fmt: on
 
 if __name__ == "__main__":
