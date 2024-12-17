@@ -9,8 +9,8 @@ keyboard = KMKKeyboard()
 
 split = Split(
     uart_interval=20,
-    data_pin=board.TX,
-    data_pin2=board.RX,
+    data_pin=board.GP1,
+    data_pin2=board.GP0,
 )
 
 keyboard.modules.append(split)
