@@ -38,6 +38,7 @@ keyboard.keymap = [
 
         XXXX, XXXX, KC.LCTL, KC.LGUI, KC.LALT,   KC.SPC, KC.ENT, KC.BSPC, XXXX, XXXX,
     ],
+]
 # fmt: on
 
 if __name__ == "__main__":
