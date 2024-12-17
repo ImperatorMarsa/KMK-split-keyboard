@@ -1,6 +1,7 @@
 import board
 
 from storage import getmount
+from kmk.hid import HIDModes
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
@@ -56,4 +57,4 @@ keyboard.keymap = [
 # fmt: on
 
 if __name__ == "__main__":
-    keyboard.go()
+    keyboard.go(hid_type=HIDModes.USB)
