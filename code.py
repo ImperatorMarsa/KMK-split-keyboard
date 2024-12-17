@@ -1,16 +1,27 @@
 import board
 
+from storage import getmount
 from kmk.kmk_keyboard import KMKKeyboard
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
-from kmk.modules.split import Split
+from kmk.modules.split import Split, SplitType, SplitSide
 
 keyboard = KMKKeyboard()
 
+split_side = SplitSide.LEFT
+data_pin = board.GP1
+data_pin2 = board.GP0
+if str(getmount("/").label)[-1] == "R":
+    split_side = SplitSide.RIGHT
+    data_pin = board.GP0
+    data_pin2 = board.GP1
+
 split = Split(
     uart_interval=20,
-    data_pin=board.GP1,
-    data_pin2=board.GP0,
+    data_pin=data_pin,
+    data_pin2=data_pin2,
+    split_type=SplitType.UART,
+    split_side=split_side,
 )
 
 keyboard.modules.append(split)
