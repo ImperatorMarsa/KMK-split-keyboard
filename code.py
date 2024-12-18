@@ -1,6 +1,6 @@
 import board
 
-from kb import KMKKeyboard
+from kb import KMKKeyboard, isRight
 
 from kmk.hid import HIDModes
 from kmk.keys import KC
