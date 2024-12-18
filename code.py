@@ -1,5 +1,4 @@
 import board
-from storage import getmount
 
 from kb import KMKKeyboard
 
@@ -11,29 +10,19 @@ from kmk.modules.split import Split, SplitType, SplitSide
 keyboard = KMKKeyboard()
 
 # Split keyboard support
-split_side = SplitSide.LEFT
-split_side = SplitSide.RIGHT
+split_side = SplitSide.RIGHT if isRight else SplitSide.LEFT
+
+data_pin = board.GP1 if split_side == SplitSide.LEFT else board.GP0
+data_pin2 = board.GP0 if split_side == SplitSide.LEFT else board.GP1
+
 split = Split(
     use_pio=True,
-    data_pin=keyboard.data_pin,
-    data_pin2=keyboard.data_pin2,
+    split_side=split_side,
+    split_type=SplitType.UART,
+    split_flip=False,
+    data_pin=data_pin,
+    data_pin2=data_pin2,
 )
-keyboard.modules.append(split)
-
-keyboard.row_pins = (
-    board.GP11,
-    board.GP12,
-    board.GP13,
-    board.GP14,
-)
-keyboard.col_pins = (
-    board.GP29,
-    board.GP28,
-    board.GP27,
-    board.GP26,
-    board.GP15,
-)
-keyboard.diode_orientation = DiodeOrientation.COL2ROW
 
 XXXX = KC.NO
 # fmt: off
