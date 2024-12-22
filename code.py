@@ -47,9 +47,9 @@ XXXX = KC.NO
 keyboard.keymap = [
     [
         #QWERTY
-        KC.Q, KC.W, KC.E, KC.R, KC.T,   KC.Y, KC.U, KC.I,    KC.O,   KC.P,
-        KC.A, KC.S, KC.D, KC.F, KC.G,   KC.H, KC.J, KC.K,    KC.L,   KC.SCLN,
-        KC.Z, KC.X, KC.C, KC.V, KC.B,   KC.N, KC.M, KC.COMM, KC.DOT, KC.SLSH,
+        KC.Q, KC.W, KC.E, KC.R, KC.T,            KC.Y, KC.U, KC.I,    KC.O,   KC.P,
+        KC.A, KC.S, KC.D, KC.F, KC.G,            KC.H, KC.J, KC.K,    KC.L,   KC.SCLN,
+        KC.Z, KC.X, KC.C, KC.V, KC.B,            KC.N, KC.M, KC.COMM, KC.DOT, KC.SLSH,
 
         XXXX, XXXX, KC.LCTL, KC.LGUI, KC.LALT,   KC.SPC, KC.ENT, KC.BSPC, XXXX, XXXX,
     ],
