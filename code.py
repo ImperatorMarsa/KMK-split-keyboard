@@ -6,7 +6,8 @@ from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
 from kmk.modules.holdtap import HoldTap
 from kmk.modules.split import Split, SplitType, SplitSide
-from kmk.modules.combos import Combos, Chord
+from kmk.modules.layers import Layers
+from kmk.modules.macros import Macros, UnicodeModeIBus
 
 keyboard = KMKKeyboard()
 
@@ -38,25 +39,47 @@ LSFT = KC.HT(KC.ENTER, KC.LSFT)
 LALT = KC.HT(KC.BSPACE, KC.LALT)
 ###################################################################################################
 
-### Combos ########################################################################################
-combos = Combos()
-keyboard.modules.append(combos)
+### Layers ########################################################################################
+keyboard.modules.append(Layers())
 
-combos.combos = [
-    Chord((KC.LSFT, KC.PDOT), KC.COMM),
-]
+M_LSFT = KC.LM(1, KC.LSFT)
+###################################################################################################
+
+### Layers ########################################################################################
+macros = Macros(unicode_mode=UnicodeModeIBus)
+keyboard.modules.append(macros)
+
+COMMA = KC.MACRO(",")
+
+Rs_B = KC.MACRO("б")
+Rl_B = KC.MACRO("Б")
+
+Rs_J = KC.MACRO("ж")
+Rl_J = KC.MACRO("Ж")
+
+Rs_YU = KC.MACRO("ю")
+Rl_YU = KC.MACRO("Ю")
 ###################################################################################################
 
 XXXX = KC.NO
+____ = KC.TRANSPARENT
 # fmt: off
 keyboard.keymap = [
     [
         #QWERTY
-        KC.Q, KC.W, KC.E, KC.R,   KC.T,     KC.Y, KC.U, KC.I, KC.O, KC.P,
-        KC.A, KC.S, KC.D, KC.F,   KC.G,     KC.H, KC.J, KC.K, KC.L, KC.SCLN,
-        KC.Z, KC.X, KC.C, KC.V,   KC.B,     KC.N, KC.M, XXXX, XXXX, KC.PDOT,
+        KC.Q, KC.W, KC.E, KC.R,   KC.T,     KC.Y,   KC.U, KC.I, KC.O,  KC.P,
+        KC.A, KC.S, KC.D, KC.F,   KC.G,     KC.H,   KC.J, KC.K, KC.L,  Rs_J,
+        KC.Z, KC.X, KC.C, KC.V,   KC.B,     KC.N,   KC.M, Rs_B, Rs_YU, KC.DOT,
 
-        XXXX, XXXX, XXXX, LCTL, KC.SPC,     LSFT, LALT, XXXX, XXXX, XXXX,
+        XXXX, XXXX, XXXX, LCTL, KC.SPC,     M_LSFT, LALT, XXXX, XXXX,  XXXX,
+    ],
+    [
+        #QWERTY
+        ____, ____, ____, ____, ____,     ____, ____, ____, ____,  ____,
+        ____, ____, ____, ____, ____,     ____, ____, ____, ____,  Rl_J,
+        ____, ____, ____, ____, ____,     ____, ____, Rl_B, Rl_YU, COMMA,
+
+        XXXX, XXXX, ____, ____, ____,     ____, ____, ____, XXXX,  XXXX,
     ],
 ]
 # fmt: on
