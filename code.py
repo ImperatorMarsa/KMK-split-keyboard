@@ -4,10 +4,12 @@ from kb import KMKKeyboard, isRight
 from kmk.hid import HIDModes
 from kmk.keys import KC
 from kmk.scanners import DiodeOrientation
+from kmk.modules.holdtap import HoldTap
 from kmk.modules.split import Split, SplitType, SplitSide
 
 keyboard = KMKKeyboard()
 
+### Split #########################################################################################
 split_side = SplitSide.LEFT
 data_pin = board.GP1
 data_pin2 = board.GP0
@@ -23,19 +25,27 @@ split = Split(
     split_type=SplitType.UART,
     split_side=split_side,
 )
-
 keyboard.modules.append(split)
+###################################################################################################
+
+### HoldTap #######################################################################################
+holdtap = HoldTap()
+keyboard.modules.append(holdtap)
+LCTL = KC.HT(KC.ESC, KC.LCTL)
+LSFT = KC.HT(KC.ENTER, KC.LSFT)
+LALT = KC.HT(KC.BSPACE, KC.LALT)
+###################################################################################################
 
 XXXX = KC.NO
 # fmt: off
 keyboard.keymap = [
     [
         #QWERTY
-        KC.Q, KC.W,    KC.E,    KC.R,    KC.T,   KC.Y,   KC.U,   KC.I,    KC.O,   KC.P,
-        KC.A, KC.S,    KC.D,    KC.F,    KC.G,   KC.H,   KC.J,   KC.K,    KC.L,   KC.SCLN,
-        KC.Z, KC.X,    KC.C,    KC.V,    KC.B,   KC.N,   KC.M,   KC.COMM, KC.DOT, KC.SLSH,
+        KC.Q, KC.W, KC.E, KC.R,   KC.T,     KC.Y, KC.U, KC.I,    KC.O,   KC.P,
+        KC.A, KC.S, KC.D, KC.F,   KC.G,     KC.H, KC.J, KC.K,    KC.L,   KC.SCLN,
+        KC.Z, KC.X, KC.C, KC.V,   KC.B,     KC.N, KC.M, KC.COMM, KC.DOT, KC.SLSH,
 
-        XXXX, XXXX, KC.LCTL, KC.LGUI, KC.LALT,   KC.SPC, KC.ENT, KC.BSPC, XXXX,   XXXX,
+        XXXX, XXXX, XXXX, KC.SPC, LCTL,     LALT, LSFT, XXXX,    XXXX,   XXXX,
     ],
 ]
 # fmt: on
