@@ -46,10 +46,10 @@ keyboard.extensions.append(MediaKeys())
 keyboard.keymap = [
 # BASE
 [
-KC.Q, KC.W, KC.E, KC.R, KC.T, KC.Y, KC.U, KC.I, KC.O, KC.P,
-KC.HT(KC.A, KC.LGUI, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.S, KC.LALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.D, KC.LCTL, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.F, KC.LSFT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.G, KC.H, KC.HT(KC.J, KC.LSFT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.K, KC.LCTL, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.L, KC.LALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.QUOT, KC.LGUI, prefer_hold=False, tap_interrupted=True, tap_time=200),
-KC.LT(3, KC.Z, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.HT(KC.X, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.C, KC.V, KC.B, KC.N, KC.M, KC.COMM, KC.HT(KC.DOT, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.LT(3, KC.SLSH, prefer_hold=True, tap_interrupted=False, tap_time=200),
-KC.NO, KC.NO, KC.LT(6, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(4, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(5, KC.TAB, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(8, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(7, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(9, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.NO, KC.NO
+KC.NO, KC.W, KC.E, KC.R, KC.T, KC.Y, KC.U, KC.I, KC.O, KC.P,
+KC.Q, KC.HT(KC.S, KC.LALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.D, KC.LCTL, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.F, KC.LSFT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.G, KC.H, KC.HT(KC.J, KC.LSFT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.K, KC.LCTL, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.L, KC.LALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.QUOT, KC.LGUI, prefer_hold=False, tap_interrupted=True, tap_time=200),
+KC.HT(KC.A, KC.LGUI, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.HT(KC.X, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.C, KC.V, KC.B, KC.N, KC.M, KC.COMM, KC.HT(KC.DOT, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=200), KC.LT(3, KC.SLSH, prefer_hold=True, tap_interrupted=False, tap_time=200),
+KC.LT(3, KC.Z, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.NO, KC.LT(6, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(4, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(5, KC.TAB, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(8, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(7, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.LT(9, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=200), KC.NO, KC.NO
 ],
 # EXTRA
 [
@@ -60,10 +60,10 @@ KC.NO, KC.NO, KC.LT(6, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time
 ],
 # TAP
 [
-KC.Q, KC.W, KC.E, KC.R, KC.T, KC.Y, KC.U, KC.I, KC.O, KC.P,
-KC.A, KC.S, KC.D, KC.F, KC.G, KC.H, KC.J, KC.K, KC.L, KC.QUOT,
-KC.Z, KC.X, KC.C, KC.V, KC.B, KC.N, KC.M, KC.COMM, KC.DOT, KC.SLSH,
-KC.NO, KC.NO, KC.ESC, KC.SPC, KC.TAB, KC.ENT, KC.BSPC, KC.DEL, KC.NO, KC.NO
+KC.Q,  KC.W,  KC.E,   KC.R,   KC.T,   KC.Y,   KC.U,    KC.I,    KC.O,   KC.P,
+KC.A,  KC.S,  KC.D,   KC.F,   KC.G,   KC.H,   KC.J,    KC.K,    KC.L,   KC.QUOT,
+KC.Z,  KC.X,  KC.C,   KC.V,   KC.B,   KC.N,   KC.M,    KC.COMM, KC.DOT, KC.SLSH,
+KC.NO, KC.NO, KC.ESC, KC.SPC, KC.TAB, KC.ENT, KC.BSPC, KC.DEL,  KC.NO,  KC.NO
 ],
 # BUTTON
 [
@@ -129,7 +129,6 @@ layer_names_list = [
     "Sym",
     "Fun",
 ]
-
 
 if __name__ == "__main__":
     print("starting Miryoku KMK")
