@@ -17,19 +17,31 @@ class KMKKeyboard(_KMKKeyboard):
         board.GP9,  # col 0
     )
     row_pins = (
-        board.GP7,  # row 0
-        board.GP8,  # row 1
-        board.GP14,  # row 2
         board.GP15,  # row 3
+        board.GP14,  # row 2
+        board.GP8,  # row 1
+        board.GP7,  # row 0
     )
+    # row_pins = (
+    #     board.GP7,  # row 0
+    #     board.GP8,  # row 1
+    #     board.GP14,  # row 2
+    #     board.GP15,  # row 3
+    # )
 
     diode_orientation = DiodeOrientation.COL2ROW
 
     # fmt: off
     coord_mapping = [
-        05, 01, 02, 03, 04,
-        10, 06, 07, 08, 09,
-        15, 11, 12, 13, 14,
-        00, 16, 17, 18, 19,
+        00, 01, 02, 03, 09,
+        05, 06, 07, 08, 14,
+        10, 11, 12, 13, 19,
+        04, 15, 16, 17, 18,
     ]
+    # coord_mapping = [
+    #     05, 01, 02, 03, 04,
+    #     10, 06, 07, 08, 09,
+    #     15, 11, 12, 13, 14,
+    #     00, 16, 17, 18, 19,
+    # ]
     # fmt:on
