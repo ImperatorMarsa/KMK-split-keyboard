@@ -1,11 +1,7 @@
 import board
-from storage import getmount
 
 from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
 from kmk.scanners import DiodeOrientation
-from kmk.modules.split import SplitSide
-
-splitSide = SplitSide.RIGHT if str(getmount("/").label).endswith("R") else SplitSide.LEFT
 
 
 class KMKKeyboard(_KMKKeyboard):
