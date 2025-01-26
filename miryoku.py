@@ -107,7 +107,3 @@ layer_names_list = [
     "Sym",
     "Fun",
 ]
-
-if __name__ == "__main__":
-    print("starting Miryoku KMK")
-    keyboard.go()
