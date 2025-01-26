@@ -1,5 +1,5 @@
 import board
-from kb import KMKKeyboard, isRight
+from kb import KMKKeyboard, splitSide
 
 from kmk.keys import KC
 from kmk.hid import HIDModes
@@ -8,10 +8,8 @@ from kmk.modules.split import Split, SplitType, SplitSide
 keyboard = KMKKeyboard()
 
 ### Split #########################################################################################
-split_side = SplitSide.RIGHT if isRight else SplitSide.LEFT
-
 split = Split(
-    split_side=split_side,
+    split_side=splitSide,
     split_type=SplitType.UART,
     split_target_left=True,
     data_pin=board.RX,
