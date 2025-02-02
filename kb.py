@@ -29,3 +29,16 @@ class KMKKeyboard(_KMKKeyboard):
         00, 16, 17, 18, 19,   20, 21, 22, 23, 39,
     ]
     # fmt:on
+
+    # fmt: off
+    led_key_pos =[
+            00, 01, 02, 03,   21, 20, 19, 18,
+        04, 05, 06, 07, 08,   26, 25, 24, 23, 22,
+        09, 10, 11, 12, 13,   31, 30, 29, 28, 27,
+        17,     16, 15, 14,   32, 33, 34,     35,
+    ]
+    # fmt:on
+    brightness_limit = 0.2
+    rgb_pixel_pin = board.GP28
+    num_pixels = 36
+    rgb_num_pixels = 36
