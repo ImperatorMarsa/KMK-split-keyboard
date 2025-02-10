@@ -31,5 +31,5 @@ rgb = Rgb_matrix(
     ledDisplay=_key,
     split=True,
     rightSide=_rightSide,
-    disable_auto_write=False,
+    disable_auto_write=True,
 )

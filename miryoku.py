@@ -1,6 +1,5 @@
 import board
 from kb import KMKKeyboard
-from rgb import rgb
 
 from kmk.keys import KC
 from kmk.modules.layers import Layers
@@ -20,7 +19,6 @@ keyboard.modules.append(Power())
 keyboard.modules.append(TapDance())
 keyboard.extensions.append(MediaKeys())
 keyboard.modules.append(CapsWord())
-keyboard.extensions.append(rgb)
 
 # fmt: off
 keyboard.keymap = [
