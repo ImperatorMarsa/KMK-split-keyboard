@@ -2,6 +2,7 @@ import board
 from kb import KMKKeyboard, isRight
 
 from kmk.extensions.media_keys import MediaKeys
+from kmk.extensions.international import International
 from kmk.hid import HIDModes
 from kmk.keys import KC
 from kmk.modules.capsword import CapsWord
@@ -41,6 +42,7 @@ keyboard.modules.append(Power())
 keyboard.modules.append(TapDance())
 keyboard.modules.append(CapsWord())
 keyboard.extensions.append(MediaKeys())
+keyboard.extensions.append(International())
 
 # fmt: off
 keyboard.keymap = [
