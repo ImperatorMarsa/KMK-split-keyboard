@@ -9,6 +9,7 @@ from kmk.modules.power import Power
 from kmk.modules.tapdance import TapDance
 from kmk.extensions.media_keys import MediaKeys
 from kmk.modules.capsword import CapsWord
+from kmk.extensions.international import International
 
 keyboard = KMKKeyboard()
 
@@ -19,6 +20,7 @@ keyboard.modules.append(Power())
 keyboard.modules.append(TapDance())
 keyboard.extensions.append(MediaKeys())
 keyboard.modules.append(CapsWord())
+keyboard.extensions.append(International())
 
 # fmt: off
 keyboard.keymap = [
