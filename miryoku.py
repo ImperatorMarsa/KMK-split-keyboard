@@ -1,5 +1,5 @@
-import board
 from kb import KMKKeyboard
+from encoder import encoder_handler, setUpEncoder
 
 from kmk.keys import KC
 from kmk.modules.layers import Layers
@@ -21,6 +21,9 @@ keyboard.modules.append(TapDance())
 keyboard.extensions.append(MediaKeys())
 keyboard.modules.append(CapsWord())
 keyboard.extensions.append(International())
+keyboard.modules.append(encoder_handler)
+
+setUpEncoder(encoder_handler)
 
 # fmt: off
 keyboard.keymap = [
