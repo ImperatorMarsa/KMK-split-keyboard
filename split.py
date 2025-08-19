@@ -1,6 +1,6 @@
 import board
 
-from kmk.modules.split import Split, SplitType, SplitSide
+from kmk.modules.split import Split, SplitType
 
 split = Split(
     split_type=SplitType.UART,

@@ -4,6 +4,8 @@ from kmk.kmk_keyboard import KMKKeyboard as _KMKKeyboard
 from kmk.scanners import DiodeOrientation
 
 
+encoderAPin = board.GP26
+encoderBPin = board.GP6
 class KMKKeyboard(_KMKKeyboard):
     col_pins = (
         board.GP13,  # col 4
@@ -40,5 +42,7 @@ class KMKKeyboard(_KMKKeyboard):
     # fmt:on
     brightness_limit = 0.2
     rgb_pixel_pin = board.GP28
+    encoder_a_pin = encoderAPin
+    encoder_b_pin = encoderBPin
     num_pixels = 36
     rgb_num_pixels = 36
