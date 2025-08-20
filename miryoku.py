@@ -41,23 +41,40 @@ J_SFT = KC.HT(KC.J, KC.LSFT, prefer_hold=False, tap_interrupted=True, tap_time=t
 K_CTL = KC.HT(KC.K, KC.LCTL, prefer_hold=False, tap_interrupted=True, tap_time=tt)
 L_GUI = KC.HT(KC.L, KC.LGUI, prefer_hold=False, tap_interrupted=True, tap_time=tt)
 QUOT_ALT = KC.HT(KC.QUOT, KC.LALT, prefer_hold=False, tap_interrupted=True, tap_time=tt)
+
+X_RALT = KC.HT(KC.X, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=tt)
+DOT_RALT = KC.HT(KC.DOT, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=tt)
+###
+
+### switch to Bottom
+Z_BOT = KC.LT(3, KC.Z, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+SLSH_BOT = KC.LT(3, KC.SLSH, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+###
+
+### Thum claster
+SW_ESC = KC.LT(6, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+SW_SPC = KC.LT(4, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+SW_TAB = KC.LT(5, KC.TAB, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+SW_ENT = KC.LT(8, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+SW_BSPC = KC.LT(7, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=tt)
+SW_DEL = KC.LT(9, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=tt)  ###
 ###
 
 # fmt: off
 keyboard.keymap = [
 # BASE
 [
-KC.Q, KC.W, KC.E, KC.R, KC.T, KC.Y, KC.U, KC.I, KC.O, KC.P,
-A_ALT, S_GUI, D_CTL, F_SFT, KC.G, KC.H, J_SFT, K_CTL, L_GUI, QUOT_ALT,
-KC.LT(3, KC.Z, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.HT(KC.X, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=tt), KC.C, KC.V, KC.B, KC.N, KC.M, KC.COMM, KC.HT(KC.DOT, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=tt), KC.LT(3, KC.SLSH, prefer_hold=True, tap_interrupted=False, tap_time=tt),
-XXXXXXX, XXXXXXX, KC.LT(6, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(4, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(5, KC.TAB, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(8, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(7, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(9, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=tt), XXXXXXX, XXXXXXX
+   KC.Q,    KC.W,   KC.E,   KC.R,   KC.T,     KC.Y,   KC.U,    KC.I,    KC.O,     KC.P,
+  A_ALT,   S_GUI,  D_CTL,  F_SFT,   KC.G,     KC.H,   J_SFT,   K_CTL,   L_GUI,    QUOT_ALT,
+  Z_BOT,  X_RALT,   KC.C,   KC.V,   KC.B,     KC.N,   KC.M,    KC.COMM, DOT_RALT, SLSH_BOT,
+XXXXXXX, XXXXXXX, SW_ESC, SW_SPC, SW_TAB,     SW_ENT, SW_BSPC, SW_DEL,  XXXXXXX,  XXXXXXX,
 ],
 # EXTRA
 [
-KC.Q, KC.W, KC.E, KC.R, KC.T, KC.Y, KC.U, KC.I, KC.O, KC.P,
-A_ALT, S_GUI, D_CTL, F_SFT, KC.G, KC.H, J_SFT, K_CTL, L_GUI, QUOT_ALT,
-KC.LT(3, KC.Z, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.HT(KC.X, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=tt), KC.C, KC.V, KC.B, KC.N, KC.M, KC.COMM, KC.HT(KC.DOT, KC.RALT, prefer_hold=False, tap_interrupted=True, tap_time=tt), KC.LT(3, KC.SLSH, prefer_hold=True, tap_interrupted=False, tap_time=tt),
-XXXXXXX, XXXXXXX, KC.LT(6, KC.ESC, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(4, KC.SPC, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(5, KC.TAB, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(8, KC.ENT, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(7, KC.BSPC, prefer_hold=True, tap_interrupted=False, tap_time=tt), KC.LT(9, KC.DEL, prefer_hold=True, tap_interrupted=False, tap_time=tt), XXXXXXX, XXXXXXX
+   KC.Q,    KC.W,   KC.E,   KC.R,   KC.T,     KC.Y,   KC.U,    KC.I,    KC.O,     KC.P,
+  A_ALT,   S_GUI,  D_CTL,  F_SFT,   KC.G,     KC.H,   J_SFT,   K_CTL,   L_GUI,    QUOT_ALT,
+  Z_BOT,  X_RALT,   KC.C,   KC.V,   KC.B,     KC.N,   KC.M,    KC.COMM, DOT_RALT, SLSH_BOT,
+XXXXXXX, XXXXXXX, SW_ESC, SW_SPC, SW_TAB,     SW_ENT, SW_BSPC, SW_DEL,  XXXXXXX,  XXXXXXX,
 ],
 # TAP
 [
@@ -68,10 +85,10 @@ XXXXXXX, XXXXXXX, KC.ESC, KC.SPC, KC.TAB, KC.ENT, KC.BSPC, KC.DEL, XXXXXXX, XXXX
 ],
 # BUTTON
 [
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-KC.LALT, KC.LGUI, KC.LCTL, KC.LSFT, XXXXXXX, XXXXXXX, KC.LSFT, KC.LCTL, KC.LGUI, KC.LALT,
-XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-XXXXXXX, XXXXXXX, KC.MB_MMB, KC.MB_LMB, KC.MB_RMB, KC.MB_RMB, KC.MB_LMB, KC.MB_MMB, XXXXXXX, XXXXXXX
+XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,     XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
+KC.LALT, KC.LGUI,   KC.LCTL,   KC.LSFT,   XXXXXXX,     XXXXXXX,   KC.LSFT,   KC.LCTL,   KC.LGUI, KC.LALT,
+XXXXXXX, XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX,     XXXXXXX,   XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX,
+XXXXXXX, XXXXXXX, KC.MB_MMB, KC.MB_LMB, KC.MB_RMB,     KC.MB_RMB, KC.MB_LMB, KC.MB_MMB, XXXXXXX, XXXXXXX
 ],
 # NAV
 [
